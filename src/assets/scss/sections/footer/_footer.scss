@@ -1,0 +1,41 @@
+.footer {
+    background-color: #005961;
+    color: #ffffff;
+    font-size: 16px;
+
+    &__container {
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__socials {
+        & a:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 1280px){
+        &__description {
+            font-size: 20px;
+        }
+
+        &__socials {
+            & a {
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+
+                & svg {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

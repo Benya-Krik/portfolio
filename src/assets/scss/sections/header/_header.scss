@@ -1,0 +1,138 @@
+.header {
+    background-color: #005961;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    color: #ffffff;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    &__navigation {
+        padding: 12px 0;
+    }
+
+    &__left, &__right {
+        display: none;
+    }
+
+    &__button {
+        position: absolute;
+        right: 20px;
+        top: 36px;
+    }
+
+    &__burger {
+        width: 36px;
+        height: 2px;
+        border: 0;
+        position: relative;
+        border-radius: 2px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -8px;
+            width: 36px;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 36px;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+    }
+
+    @media screen and (min-width:768px){
+        &__button {
+            display: none;
+        }
+
+        &__navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        &__left {
+            display: flex;
+            
+            & li {
+                margin-right: 48px;
+            }
+        
+            & a {
+                color: #ffffff;
+                font-size: 18px;
+            }
+        }
+
+        &__right {
+            display: flex;
+            
+            & li {
+                margin-left: 48px;
+            }
+            
+        
+            & a {
+                color: #ffffff;
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media screen and (min-width:1280px){
+        &__navigation {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        &__left {
+            
+            & li {
+                margin-right: 84px;
+            }
+
+            & a {
+                color: #ffffff;
+                font-size: 32px;
+            }
+        }
+
+        &__right {
+            
+            & li {
+                margin-left: 84px;
+            }
+
+            & a {
+                color: #ffffff;
+                font-size: 32px;
+            }
+        }
+
+        &__logo {
+            & svg {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
