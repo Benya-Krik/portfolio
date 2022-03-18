@@ -12,10 +12,18 @@
         font-size: 32px;
         font-weight: 400;
         position: relative;
+        display: flex;
 
         & span {
             & a {
+                display: block;
                 color: #80b7bd;
+                transition: all 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                    
+                }
             }
         }
 
@@ -39,6 +47,11 @@
                 color: #006f7a;
                 font-size: 24px;
                 font-weight: 400;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: #d8b2b2;
+                }
             }
         }
     }
@@ -52,7 +65,12 @@
         height: 100%;
         border-radius: 12px;
         box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.35);
+        transition: all 0.3s;
 
+        &:hover {
+            transform: scale(1.05);
+            
+        }
     }
 
     &__text {
@@ -89,11 +107,11 @@
 
         &__image {
             width: 580px;
-            margin-right: 40px;
         }
 
         &__text {
             font-size: 24px;
+            margin-left: 40px;
         }
 
         &__item {

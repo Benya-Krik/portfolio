@@ -25,6 +25,26 @@
         top: 36px;
     }
 
+    &__logo {
+
+        & svg {
+                
+            & path {
+                transition: .3s;
+            }
+        }
+        
+        &:hover {
+
+            & svg {
+                
+                & path {
+                    fill: #d8b2b2;
+                }
+            }
+        }
+    }
+
     &__burger {
         width: 36px;
         height: 2px;
@@ -75,6 +95,13 @@
             
             & li {
                 margin-right: 48px;
+
+                & a {
+                    transition: all 0.3s;
+                    &:hover {
+                        color: #d8b2b2;
+                    }
+                }
             }
         
             & a {
@@ -86,8 +113,16 @@
         &__right {
             display: flex;
             
+            
             & li {
                 margin-left: 48px;
+
+                & a {
+                    transition: all 0.3s;
+                    &:hover {
+                        color: #d8b2b2;
+                    }
+                }
             }
             
         
