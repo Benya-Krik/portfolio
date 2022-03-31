@@ -98,10 +98,12 @@
 
         &__photo {
             margin-right: 40px;
+            transform: translateX(120px);
         }
 
         &__description {
             font-size: 18px;
+            transform: translateX(-120px);
         }
     }
 

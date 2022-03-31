@@ -387,6 +387,14 @@
   .projects__title--little a {
     font-size: 32px;
   }
+  .projects__image {
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
+  }
+  .projects__text {
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -534,9 +542,13 @@
   }
   .about__photo {
     margin-right: 40px;
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
   }
   .about__description {
     font-size: 18px;
+    -webkit-transform: translateX(-120px);
+            transform: translateX(-120px);
   }
 }
 
