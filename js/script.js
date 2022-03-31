@@ -71,7 +71,7 @@ function onEntry(entry) {
   }
   
   let options = {
-    threshold: [0.50] };
+    threshold: [0.35] };
   let observer = new IntersectionObserver(onEntry, options);
   let elements = document.querySelectorAll('.element-animation');
   

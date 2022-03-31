@@ -46,6 +46,7 @@
   border: 0;
   position: relative;
   border-radius: 2px;
+  background-color: #ffffff;
 }
 
 .header__burger::before {
