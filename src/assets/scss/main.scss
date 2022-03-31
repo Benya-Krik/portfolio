@@ -32,12 +32,13 @@
         max-width: 587px;
     }
 
-    @media screen and (min-width:1024px){
-        // max-width: 768px;
-    }
-
     @media screen and (min-width:1280px){
         max-width: 1280px;
     }
 }
 
+.element-show {
+    opacity: 1;
+    transition: 2s;
+    transform: translateX(0%);
+}

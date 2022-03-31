@@ -1,122 +1,80 @@
-'use string'
+'use strict'
 
-// let x = parseInt(prompt("Введите число"));
-// let y = parseInt(prompt("Введите второе число"));
+// typewriter from intro
 
-// if (x > 0 && y > 0) {
-//     console.log(x - y);
-// } else if (x < 0 && y < 0) {
-//     console.log(x * y);
-// } else if ((x > 0 && y < 0) || (x < 0 && y > 0)) {
-//     console.log(x + y);
-// }
+const text = [
+    "Hello! I'm Ilya.",
+    "I'm a junior front-end developer.",
+    "Welcome to my site.",
+    "Here you can see my projects.",
+];
 
+let i = 0;
+let El = 0;
+let speed = 100;
+let pause = 1000
+let result = "";
 
-// let a = parseInt(prompt("Введите первое число"));
-// let b = parseInt(prompt("Введите второе число"));
+function typeIntro() {
+    if (El < text[i].length) {
+        result += text[i][El];
+        document.getElementById("hello").innerHTML = result + "|"; 
+        El++
+        setTimeout(typeIntro, speed);
+    }
+    else {
+        setTimeout(typeLine, pause)
+    }
+}
 
-// function watIs() {
-//     let i = prompt("1 2 3 4?")
-//     switch (i) {
-//         case "1":
-//             getSum()    
-//             break;
+function typeLine() {
+    i++;
+    El = 0;
+    result = "";
+    if (i == text.length) i = 0;
+    typeIntro ();
+}
 
-//         case "2":
-//             getMul()
-//             break;
+typeIntro();
 
-//         case "3":
-//             getMin()
-//             break;
+// scroll to anchor link
 
-//         case "4":
-//             getDel()
-//             break;
+document.querySelectorAll('a[href^="#"').forEach(link => {
 
-//         default:
-//             alert("TI LOH EBANIY")
-//             break;
-//     }
-// }
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-// watIs();
+        let href = this.getAttribute('href').substring(1);
 
+        const scrollTarget = document.getElementById(href);
+        const topOffset = 156;
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
 
-// function getSum() {
-//     return alert(a + b);
-// }
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
 
-// function getMul() {
-//     return alert(a * b);
-// }
+// scrolling animation
 
-// function getMin() {
-//     return alert(a - b)
-// }
-
-// function getDel() {
-//     return alert(a / b)
-// }
-
-
-// for (let a = 0; a < 11; a++) {
-
-//     if (a % 2 == 0) {
-//         console.log(a + " - четное число");
-//     } else if (a % 2 !== 0){
-//         console.log(a + " - нечетное число");
-//     } else if (a == 0){
-//         console.log("Это ноль");
-//     }
-// }
-
-// const post = {
-//     author: "John", //вывести этот текст
-//     postId: 23,
-//     comments: [{
-//             userId: 10,
-//             userName: "Alex",
-//             text: "lorem ipsum",
-//             rating: {
-//                 likes: 10,
-//                 dislikes: 2 //вывести это число
-//             }
-//         },
-//         {
-//             userId: 5, //вывести это число
-//             userName: "Jane",
-//             text: "lorem ipsum 2", //вывести этот текст
-//             rating: {
-//                 likes: 3,
-//                 dislikes: 1
-//             }
-//         },
-//     ]
-// };
-
-// console.log(post.author);
-// console.log(post.comments[0].rating.dislikes);
-// console.log(post.comments[1].userId);
-// console.log(post.comments[1].text);
-
-
-// const products = [{
-//         id: 3,
-//         price: 200,
-//     },
-//     {
-//         id: 4,
-//         price: 900,
-//     },
-//     {
-//         id: 1,
-//         price: 1000,
-//     },
-// ];
-
-// products.forEach(item => {
-// item.price -= item.price * 0.15
-// })
-
-// console.log(products);
+function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+            change.target.classList.add('element-show');
+      } else {
+        change.target.classList.remove('element-show');
+      }
+    });
+  }
+  
+  let options = {
+    threshold: [0.50] };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.element-animation');
+  
+  for (let elm of elements) {
+    observer.observe(elm);
+  }

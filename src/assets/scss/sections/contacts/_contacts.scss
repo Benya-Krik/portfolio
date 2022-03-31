@@ -1,4 +1,6 @@
 .contacts {
+    opacity: 0;
+    transition: all 2s;
     
     &__container {
         display: flex;
