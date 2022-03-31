@@ -38,7 +38,7 @@
         font-weight: 400;
 
         opacity: 0;
-        transform: translateX(-120px);
+        transform: translateX(-20px);
 
         & ul {
             padding: 20px 0;
@@ -63,7 +63,7 @@
 
     &__photo {
         opacity: 0;
-        transform: translateX(120px);
+        transform: translateX(20px);
 
         transition: all 2s;
         min-width: 218px;
