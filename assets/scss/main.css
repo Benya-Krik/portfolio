@@ -822,7 +822,7 @@
 
 .menu__title {
   position: absolute;
-  left: 20px;
+  left: 40px;
   top: 16px;
   color: #FFFFFF;
   font-family: 'Jost', sans-serif;
@@ -845,12 +845,16 @@
 }
 
 .menu__item:not(:first-child) {
-  padding: 32px 0;
+  padding: 16px 0;
 }
 
 .menu__item:not(:first-child) a {
   font-size: 24px;
   color: #FFFFFF;
+}
+
+.menu__socials {
+  padding-bottom: 32px;
 }
 
 .menu__socials a:not(:last-child) {
@@ -907,10 +911,6 @@
 
 .hide {
   display: none;
-}
-
-.scroll-stop {
-  overflow: hidden;
 }
 
 .animate {
