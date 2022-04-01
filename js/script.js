@@ -12,13 +12,14 @@ const text = [
 let i = 0;
 let El = 0;
 let speed = 100;
-let pause = 1000
+let pause = 1500;
 let result = "";
+let caret = '<span class="intro__caret">|</span>';
 
 function typeIntro() {
     if (El < text[i].length) {
         result += text[i][El];
-        document.getElementById("hello").innerHTML = result + "|"; 
+        document.getElementById("hello").innerHTML = result + caret; 
         El++
         setTimeout(typeIntro, speed);
     }
@@ -78,3 +79,31 @@ function onEntry(entry) {
   for (let elm of elements) {
     observer.observe(elm);
   }
+
+  // burger menu
+
+const iconBurger = document.querySelector('.header__button');
+  
+iconBurger.onclick = getBurger;
+
+let closeMenu = [...document.querySelectorAll('.menu__item')].forEach(item => { 
+  item.addEventListener('click', ()=>{
+    getBurger();
+    });
+});
+
+function getBurger() {
+  const headerLogo = document.querySelector('.header__logo');
+  const burgerMenu = document.querySelector('.menu');
+  const scrollBody = document.querySelector('body');
+
+  headerLogo.classList.toggle('hide');
+  burgerMenu.classList.toggle('active');
+  scrollBody.classList.toggle('scroll-stop');
+
+  function animateBurger() {
+    burgerMenu.classList.toggle('animate');
+  }
+
+  setTimeout(animateBurger, 1)
+}

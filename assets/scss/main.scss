@@ -4,7 +4,7 @@
 @import "sections/about/about";
 @import "sections/contacts/contacts";
 @import "sections/footer/footer";
-
+@import "sections/menu/menu";
 
 
 
@@ -43,4 +43,22 @@
     opacity: 1;
     transition: 2s;
     transform: translateX(0%);
+}
+
+.active {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.scroll-stop {
+    overflow: hidden;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0px);
+    
 }

@@ -32,6 +32,10 @@
         font-weight: 400;
     }
 
+    &__caret {
+        animation: 0.7s blinker infinite;
+    }
+
     &__arrow {
         display: block;
 
@@ -66,6 +70,11 @@
         0% { bottom: 28px; }
         50% { bottom: 44px; }
         100% { bottom: 28px; }
+    }
+
+    @keyframes blinker {
+        from { opacity: 1; }
+        to { opacity: 0; }
     }
 
     @media screen and (min-width:768px){

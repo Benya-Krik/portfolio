@@ -31,6 +31,10 @@
   top: 36px;
 }
 
+.header__button:hover {
+  cursor: pointer;
+}
+
 .header__logo svg path {
   -webkit-transition: .3s;
   transition: .3s;
@@ -194,6 +198,11 @@
   font-weight: 400;
 }
 
+.intro__caret {
+  -webkit-animation: 0.7s blinker infinite;
+          animation: 0.7s blinker infinite;
+}
+
 .intro__arrow {
   display: block;
 }
@@ -247,6 +256,24 @@
   }
   100% {
     bottom: 28px;
+  }
+}
+
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -760,6 +787,76 @@
   }
 }
 
+.menu {
+  display: none;
+  opacity: 0;
+  z-index: 9;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: #005961;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__navigation {
+  padding-top: 200px;
+}
+
+.menu__title {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: #FFFFFF;
+  font-family: 'Jost', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__item:not(:first-child) {
+  padding: 32px 0;
+}
+
+.menu__item:not(:first-child) a {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.menu__socials a:not(:last-child) {
+  padding-right: 12px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -802,5 +899,23 @@
   transition: 2s;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+}
+
+.active {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.scroll-stop {
+  overflow: hidden;
+}
+
+.animate {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 /*# sourceMappingURL=main.css.map */
