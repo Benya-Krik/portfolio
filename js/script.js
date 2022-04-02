@@ -95,15 +95,11 @@ let closeMenu = [...document.querySelectorAll('.menu__item')].forEach(item => {
 function getBurger() {
   const headerLogo = document.querySelector('.header__logo');
   const burgerMenu = document.querySelector('.menu');
-  // const scrollBody = document.querySelector('body');
-
+  const icon = document.querySelector('.header__burger');
+  
+  icon.classList.toggle('header__burger--active');
   headerLogo.classList.toggle('hide');
   burgerMenu.classList.toggle('active');
-  // scrollBody.classList.toggle('scroll-stop');
 
-  function animateBurger() {
-    burgerMenu.classList.toggle('animate');
-  }
-
-  setTimeout(animateBurger, 1)
-}
+  setTimeout(()=> burgerMenu.classList.toggle('animate'), 1);
+};
