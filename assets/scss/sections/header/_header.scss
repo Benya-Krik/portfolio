@@ -56,9 +56,6 @@
         position: relative;
         border-radius: 2px;
         background-color: #ffffff;
-        // transition: all 1s;
-
-        
 
         &::before {
             content: "";
@@ -71,7 +68,6 @@
             background-color: #ffffff;
             border-radius: 2px; 
             transition: all 0.3s;
-
         }
 
         &::after {

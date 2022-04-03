@@ -895,6 +895,10 @@
   padding-right: 12px;
 }
 
+.animate {
+  opacity: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -945,9 +949,5 @@
 
 .hide {
   display: none;
-}
-
-.animate {
-  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */
