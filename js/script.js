@@ -4,7 +4,7 @@
 
 const text = [
     "Hello! I'm Ilya.",
-    "I'm a junior front-end developer.",
+    "I'm a junior software developer.",
     "Welcome to my site.",
     "Here you can see my projects.",
 ];
