@@ -87,7 +87,7 @@ const iconBurger = document.querySelector('.header__button');
 iconBurger.onclick = getBurger;
 
 let closeMenu = [...document.querySelectorAll('.menu__item')].forEach(item => { 
-  item.addEventListener('click', ()=> {getBurger()});
+  item.addEventListener('click', ()=> getBurger());
 });
 
 function getBurger() {
